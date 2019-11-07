@@ -700,13 +700,13 @@ func NewStatLine(oldMongo, newMongo MongoStatus, key string, all bool, sampleSec
 	}
 
 	if newStat.OpLatencies != nil {
-		if newStat.OpLatencies.Reads != nil {
+		if newStat.OpLatencies.Reads != nil && newStat.OpLatencies.Reads.Latency > 0 && newStat.OpLatencies.Reads.Ops > 0 {
 			returnVal.ReadLatency = newStat.OpLatencies.Reads.Latency / newStat.OpLatencies.Reads.Ops
 		}
-		if newStat.OpLatencies.Writes != nil {
+		if newStat.OpLatencies.Writes != nil && newStat.OpLatencies.Writes.Latency > 0 && newStat.OpLatencies.Writes.Ops > 0 {
 			returnVal.WriteLatency = newStat.OpLatencies.Writes.Latency / newStat.OpLatencies.Writes.Ops
 		}
-		if newStat.OpLatencies.Commands != nil {
+		if newStat.OpLatencies.Commands != nil && newStat.OpLatencies.Commands.Latency > 0 && newStat.OpLatencies.Commands.Ops > 0 {
 			returnVal.CommandLatency = newStat.OpLatencies.Commands.Latency / newStat.OpLatencies.Commands.Ops
 		}
 	}
