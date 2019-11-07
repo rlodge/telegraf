@@ -324,8 +324,8 @@ type OpLatenciesStats struct {
 
 // LatencyStats lists total latency in microseconds and count of operations, enabling you to obtain an average
 type LatencyStats struct {
-	Latency  int64 `bson:"latency"`
-	Ops      int64 `bson:"ops"`
+	Latency int64 `bson:"latency"`
+	Ops     int64 `bson:"ops"`
 }
 
 // MetricsStats stores information related to metrics
@@ -506,9 +506,9 @@ type StatLine struct {
 	Command, CommandCnt int64
 
 	// OpLatency fields
-	WriteLatency        int64
-	ReadLatency         int64
-	CommandLatency      int64
+	WriteLatency   int64
+	ReadLatency    int64
+	CommandLatency int64
 
 	// TTL fields
 	Passes, PassesCnt                     int64

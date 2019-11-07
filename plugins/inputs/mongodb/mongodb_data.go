@@ -86,9 +86,9 @@ var DefaultStats = map[string]string{
 }
 
 var DefaultLatencyStats = map[string]string{
-	"latency_writes":            "WriteLatency",
-	"latency_reads":             "ReadLatency",
-	"latency_commands":          "CommandLatency",
+	"latency_writes":   "WriteLatency",
+	"latency_reads":    "ReadLatency",
+	"latency_commands": "CommandLatency",
 }
 
 var DefaultReplStats = map[string]string{
