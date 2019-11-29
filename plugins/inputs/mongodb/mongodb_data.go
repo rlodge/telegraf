@@ -234,6 +234,7 @@ func (d *MongodbData) AddDefaultStats() {
 	d.addStat(statLine, DefaultStats)
 	if d.StatLine.NodeType != "" {
 		d.addStat(statLine, DefaultReplStats)
+		d.Tags["node_type"] = d.StatLine.NodeType
 	}
 
 	if d.StatLine.ReadLatency > 0 {
